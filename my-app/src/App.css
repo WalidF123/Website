@@ -27,6 +27,49 @@
 .App-link {
   color: #61dafb;
 }
+.header-container {
+  background-color: #87A96B;
+  padding: 20px;
+}
+.header-title{
+  font-size: 32px;
+  margin: 0; 
+}
+.header-description {
+  font-size: 20px; 
+  color: white;
+  margin: 0; 
+  text-align: center;
+}
+
+.small-scale-farming-container {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.small-scale-farming-heading {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.small-scale-farming-text {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.small-scale-farming-list {
+  margin-bottom: 15px;
+}
+
+.small-scale-farming-list li {
+  margin-bottom: 8px;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -36,3 +79,5 @@
     transform: rotate(360deg);
   }
 }
+
+

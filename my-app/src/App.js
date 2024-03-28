@@ -1,25 +1,63 @@
-import logo from './logo.svg';
 import './App.css';
 
+import Footer from './fragments/footer';
+import Header from './fragments/header';
+import Navbar from './fragments/navbar';
+  
+import React, { useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+import { createUser, getUser, removeUser } from "./data/repository";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/signUp.js";
+
+import MyProfile from "./pages/myProfile";
+import Products from './pages/products';
+
 function App() {
+  const [username, setUsername] = useState(getUser());
+
+  const loginUser = (username) => {
+    setUsername(username);
+  }
+
+  const logoutUser = () => {
+    removeUser();
+    setUsername(null);
+  }
+
+  const signUpUser = (username, password) => {
+    const created = createUser(username, password);
+    if (created === true) {
+      setUsername(username);
+    } else {
+      // Handle error if user creation fails
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex flex-column min-vh-100">
+      <Router>
+        <Header />
+        <Navbar username={username} logoutUser={logoutUser} />
+        <main role="main">
+          <div className="container my-3">
+            <Routes>
+              <Route path="/" element={<Home username={username} />} />
+              <Route path="/products" element={<Products></Products>} />
+              <Route path="/login" element={<Login loginUser={loginUser} />} />
+              <Route path="/signup" element={<SignUp signUpUser={signUpUser} />} /> {/* Route for the sign-up page */}
+              <Route path="/profile" element={<MyProfile username={username} />} />
+            </Routes>
+          </div>
+        </main>
+        <Footer />
+      </Router>
     </div>
   );
 }
+  
+
 
 export default App;
