@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/website/static/css/main.72a207ce.css",
-    "main.js": "/website/static/js/main.65f6c815.js",
-    "static/js/453.ed3810f9.chunk.js": "/website/static/js/453.ed3810f9.chunk.js",
-    "static/media/strawberries.jpeg": "/website/static/media/strawberries.b3fad8279f41d9ad8c9f.jpeg",
-    "static/media/coconutoil.jpeg": "/website/static/media/coconutoil.f1765cd195cd334d3835.jpeg",
-    "static/media/tomatoes.jpeg": "/website/static/media/tomatoes.368f809c7fb9e18a3b5b.jpeg",
-    "static/media/logo.jpeg": "/website/static/media/logo.2e88fd1b4bc60e887f2b.jpeg",
-    "index.html": "/website/index.html",
-    "main.72a207ce.css.map": "/website/static/css/main.72a207ce.css.map",
-    "main.65f6c815.js.map": "/website/static/js/main.65f6c815.js.map",
-    "453.ed3810f9.chunk.js.map": "/website/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/website/my-app/static/css/main.72a207ce.css",
+    "main.js": "/website/my-app/static/js/main.ff48c0ff.js",
+    "static/js/453.ed3810f9.chunk.js": "/website/my-app/static/js/453.ed3810f9.chunk.js",
+    "static/media/strawberries.jpeg": "/website/my-app/static/media/strawberries.b3fad8279f41d9ad8c9f.jpeg",
+    "static/media/coconutoil.jpeg": "/website/my-app/static/media/coconutoil.f1765cd195cd334d3835.jpeg",
+    "static/media/tomatoes.jpeg": "/website/my-app/static/media/tomatoes.368f809c7fb9e18a3b5b.jpeg",
+    "static/media/logo.jpeg": "/website/my-app/static/media/logo.2e88fd1b4bc60e887f2b.jpeg",
+    "index.html": "/website/my-app/index.html",
+    "main.72a207ce.css.map": "/website/my-app/static/css/main.72a207ce.css.map",
+    "main.ff48c0ff.js.map": "/website/my-app/static/js/main.ff48c0ff.js.map",
+    "453.ed3810f9.chunk.js.map": "/website/my-app/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.72a207ce.css",
-    "static/js/main.65f6c815.js"
+    "static/js/main.ff48c0ff.js"
   ]
 }
