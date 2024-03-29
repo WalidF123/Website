@@ -4,23 +4,21 @@ import logo from "../assets/logo.jpeg";
 function Home(props) {
   return (
     <div className="container text-center mt-5">
-      <h1 className="display-4 mb-4">Welcome to <b>SOIL</b></h1>
+      <h1 className="display-4 mb-4">Welcome to <b>my humble abode</b></h1>
       <div className="row">
         <div className="col-md-6">
           <img src={logo} className="img-fluid" alt="Logo" width="400" length="400" />
         </div>
         <div className="col-md-6">
-          <h2>About SOIL</h2>
+          <h2>About Me</h2>
           <p>
-            We are SOIL a long-term organic food grocer
-            with several store locations around Melbourne. We focus on bringing premium,
-            organic fresh food to the community.
+            My name is Walid Feki and I am a student at the university of RMIT. Who am I really though? I play a range of sports
+            tennis,basketball,soccer etc but am I an athlete? I believe education is important and vital for everyone but I do not think of myself as 
+            a scholar. This websites purpose is going to be redefined everyday as I learn more and more about web development and get more experience I 
+            will display them on this site.
           </p>
-          <p>
-            In addition to being food grocers,
-            we offer face to face seminars on diet, nutrition, and small-scale organic farming
-          </p>
-          <a href="/products" className="btn btn-primary">Explore Organic Products</a>
+         
+          <a href="/products" className="btn btn-primary">Cool things</a>
         </div>
       </div>
 
