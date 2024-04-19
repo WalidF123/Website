@@ -1,19 +1,19 @@
 import './App.css';
 
+import React, { useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from './fragments/footer';
 import Header from './fragments/header';
 import Navbar from './fragments/navbar';
-  
-import React, { useState } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import { createUser, getUser, removeUser } from "./data/repository";
+import DietPlan from './pages/DietPlan';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import SignUp from "./pages/signUp.js";
-
 import MyProfile from "./pages/myProfile";
 import Products from './pages/products';
+import SignUp from './pages/Signup';
+
+import { createUser, getUser, removeUser } from "./data/repository";
 
 function App() {
   const [username, setUsername] = useState(getUser());
@@ -49,6 +49,8 @@ function App() {
               <Route path="/login" element={<Login loginUser={loginUser} />} />
               <Route path="/signup" element={<SignUp signUpUser={signUpUser} />} /> {/* Route for the sign-up page */}
               <Route path="/profile" element={<MyProfile username={username} />} />
+              <Route path="/dietplan" element={<DietPlan />} />
+
             </Routes>
           </div>
         </main>

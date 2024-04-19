@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpeg"; // Assuming your logo image is stored in the "assets" folder
+
 function Navbar(props) {
   return ( 
     <nav className="navbar navbar-expand-lg navbar-light transparent-bg" style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
       <div className="container">
         <Link className="navbar-brand" to="/">
-        <img src={logo} alt="React Logo" width="50" height="50"  />
+          <img src={logo} alt="React Logo" width="50" height="50"  />
         </Link>
         <span style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Cursive', color: '#333',marginRight: '50px' }}>SOIL</span>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -21,34 +22,35 @@ function Navbar(props) {
             <li className="nav-item">
               <Link className="nav-link" to="/products" style={{ color: 'black' }}>Products</Link>
             </li>
-            {props.username !== null &&
+            {props.username && 
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/profile" style={{ color: 'black' }}>My Profile</Link>
                 </li>
+            
                 <li className="nav-item">
-                  <Link className="nav-link" to="/forum" style={{ color: 'black' }}>Forum</Link>
+                  <Link className="nav-link" to="/dietplan" style={{ color: 'black' }}>Diet Plan</Link> {/* Add Diet Plan link */}
                 </li>
               </>
             }
           </ul>
           <ul className="navbar-nav">
-            {props.username === null ?
+            {props.username ?
+              <>
+                <li className="nav-item">
+                  <span className="nav-link">Welcome, {props.username}</span>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link" to="/login" onClick={props.logoutUser}>Logout</button>
+                </li>
+              </>
+              :
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/login" style={{ color: 'black' }}>Login</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/signup" style={{ color: 'black' }}>Sign Up</Link>
-                </li>
-              </>
-              :
-              <>
-                <li className="nav-item">
-                  <span className="nav-link text-light">Welcome, {props.username}</span>
-                </li>
-                <li className="nav-item">
-                  <button className="nav-link" to="/login" onClick={props.logoutUser}>Logout</button>
                 </li>
               </>
             }
@@ -59,4 +61,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default Navbar

@@ -3,6 +3,7 @@ import { getUser, getUsers } from "../data/repository";
 
 import React, { useState } from "react";
 import { removeUser, updateUser } from "../data/repository";
+import Subscription from './subscriptions';
 
 
 function MyProfile() {
@@ -24,7 +25,7 @@ function MyProfile() {
     event.preventDefault();
     //only changes name FOR NOW (Will add more features to change) 
     //TODO Add more features
-    const updatedData = { ...currentUser, name: formData.name }; 
+    const updatedData = { ...currentUser, name: formData.name, bio: formData.bio, gender: formData.gender,dob:formData.dob ,age: formData.age }; 
     //update user function 
     //This function has been added to the repository.js
     const updated = await updateUser(updatedData); 
@@ -33,6 +34,8 @@ function MyProfile() {
       setEditMode(false);
     }
   };
+
+
 
 
   //DELETE FEATURE
@@ -52,47 +55,98 @@ function MyProfile() {
   };
 
   return (
-    <div style={{ backgroundColor: "#f0f0f0", padding: "20px", borderRadius: "10px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
-      <div style={{ display: "flex", alignItems: "center", marginBottom: "20px"}}>
-        <div style={{ width: "70px", height: "70px", backgroundColor: "#ccc", borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <FaUser size={50} />
-        </div>
-        <div style={{ marginLeft: "20px" }}>
-          {currentUser ? (
-            <>
-              {editMode ? (
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Enter your name"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <button type="submit">Save</button>
-                    <button type="button" onClick={() => setEditMode(false)}>Cancel</button>
-                  </div>
-                </form>
+    <div style={{ backgroundColor: "#f5f5f5", padding: "30px", borderRadius: "15px", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", border: "1px solid #ccc",
+    maxWidth: "600px",margin: "auto"}}>
+      <div style={{ backgroundColor: "#87A96B",padding: "15px",borderRadius: "10px",
+      textAlign: "center",marginBottom: "30px",fontSize: "24px",fontWeight: "bold" }}>User Profile</div>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: "30px"}}>
+          <div style={{ width: "80px", height: "80px", backgroundColor: "#87A96B", borderRadius: "50%", 
+          display: "flex", justifyContent: "center", alignItems: "center",marginRight: "20px"}}>
+              <FaUser size={60}/>
+          </div>
+          <div>
+              {currentUser ? (
+                  <>
+                      {editMode ? (
+                          <form onSubmit={handleSubmit}>
+                              <div className="form-group">
+                                  <label htmlFor="name">Name:</label>
+                                  <input
+                                      type="text"
+                                      id="name"
+                                      name="name"
+                                      value={formData.name}
+                                      onChange={handleInputChange}
+                                      placeholder="Enter your name"
+                                      style={{ width: "100%", padding: "8px", marginBottom: "15px", borderRadius: "5px" }}
+                                  />
+                              </div>
+                              <div className="form-group">
+                                  <label htmlFor="bio">Bio:</label>
+                                  <textarea
+                                      id="bio"
+                                      name="bio"
+                                      value={formData.bio}
+                                      onChange={handleInputChange}
+                                      placeholder="Enter your bio"
+                                      style={{ width: "100%", padding: "8px", marginBottom: "15px", borderRadius: "5px" }}
+                                  />
+                              </div>
+                              <div className="form-group">
+                                  <label htmlFor="gender">Gender:</label>
+                                  <select
+                                      id="gender"
+                                      name="gender"
+                                      value={formData.gender}
+                                      onChange={handleInputChange}
+                                      style={{ width: "100%", padding: "8px", marginBottom: "15px", borderRadius: "5px" }}
+                                  >
+                                      <option value="">Select gender</option>
+                                      <option value="Male">Male</option>
+                                      <option value="Female">Female</option>
+                                      <option value="Other">Other</option>
+                                  </select>
+                              </div>
+                              <div className="form-group">
+                                  <label htmlFor="dob">Date of Birth:</label>
+                                  <input 
+                                      type="date" 
+                                      id="dob" 
+                                      name="dob" 
+                                      value={formData.dob} 
+                                      onChange={handleInputChange} 
+                                      style={{ width: "100%", padding: "8px", marginBottom: "15px", borderRadius: "5px" }}
+                                  />
+                              </div>
+                              <div className="form-group" style={{ display: "flex", justifyContent: "space-between" }}>
+                                  <button type="submit" style={{ backgroundColor: "#8bd8b3", color: "#fff", padding: "10px 20px", borderRadius: "5px", border: "none" }}>Save</button>
+                                  <button type="button" onClick={() => setEditMode(false)} style={{ backgroundColor: "#f67280", color: "#fff", padding: "10px 20px", borderRadius: "5px", border: "none" }}>Cancel</button>
+                              </div>
+                          </form>
+                      ) : (
+                          <>
+                              <h2>{currentUser.name}</h2>
+                              <p><b>Bio:</b> {currentUser.bio}</p>
+                              <p><b>Email:</b> {currentUser.email}</p>
+                              {currentUser.dob && <p><b>Date of Birth: </b>{currentUser.dob}</p>}
+                              <p><b>Date of Joining:</b> {currentUser.dateOfJoining}</p>
+                              <p><b>Gender:</b> {currentUser.gender}</p>
+                              <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
+                                  <button onClick={() => setEditMode(true)} style={{ backgroundColor: "#87A96B", color: "#fff", padding: "10px 20px", borderRadius: "5px", border: "none" }}>Edit</button>
+                                  <button onClick={handleDelete} style={{ backgroundColor: "#f67280", color: "#fff", padding: "10px 20px", borderRadius: "5px", border: "none" }}>Delete</button>
+                              </div>
+                          </>
+                      )}
+                  </>
               ) : (
-                <>
-                  <h2>{currentUser.name}</h2>
-                  <p>Email: {currentUser.email}</p>
-                  <p>Date of Joining: {currentUser.dateOfJoining}</p>
-                  <button onClick={() => setEditMode(true)}>Edit</button>
-                  <button onClick={handleDelete}>Delete</button>
-                </>
+                  <p style={{ color: "#f67280" }}>No user found. Please log in again.</p>
               )}
-            </>
-          ) : (
-            <p>No user found. Please log in again.</p>
-          )}
-        </div>
+          </div>
       </div>
+
+
+      <hr />
+<Subscription/>
     </div>
   );
 }
