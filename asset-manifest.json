@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/Website/static/css/main.72a207ce.css",
-    "main.js": "/Website/static/js/main.cd860431.js",
+    "main.css": "/Website/static/css/main.64046212.css",
+    "main.js": "/Website/static/js/main.53380b01.js",
     "static/js/453.ed3810f9.chunk.js": "/Website/static/js/453.ed3810f9.chunk.js",
     "static/media/strawberries.jpeg": "/Website/static/media/strawberries.b3fad8279f41d9ad8c9f.jpeg",
     "static/media/coconutoil.jpeg": "/Website/static/media/coconutoil.f1765cd195cd334d3835.jpeg",
     "static/media/tomatoes.jpeg": "/Website/static/media/tomatoes.368f809c7fb9e18a3b5b.jpeg",
+    "static/media/carrot.jpeg": "/Website/static/media/carrot.878719fab3e335fa732e.jpeg",
+    "static/media/corn.jpeg": "/Website/static/media/corn.2906b39af5877bb18fb4.jpeg",
+    "static/media/apple.jpeg": "/Website/static/media/apple.4e3be492f67edfffd3df.jpeg",
     "static/media/logo.jpeg": "/Website/static/media/logo.2e88fd1b4bc60e887f2b.jpeg",
     "index.html": "/Website/index.html",
-    "main.72a207ce.css.map": "/Website/static/css/main.72a207ce.css.map",
-    "main.cd860431.js.map": "/Website/static/js/main.cd860431.js.map",
+    "main.64046212.css.map": "/Website/static/css/main.64046212.css.map",
+    "main.53380b01.js.map": "/Website/static/js/main.53380b01.js.map",
     "453.ed3810f9.chunk.js.map": "/Website/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72a207ce.css",
-    "static/js/main.cd860431.js"
+    "static/css/main.64046212.css",
+    "static/js/main.53380b01.js"
   ]
 }
