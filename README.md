@@ -1,6 +1,6 @@
 # Website
 Just a general website with interactive features
-<a href = "https://walidf123.github.io/Website/">"Click here to go my site"</a>
+<a href = "https://WalidF123.github.io/Website/">"Click here to go my site"</a>
 
 
 
