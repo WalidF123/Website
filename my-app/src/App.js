@@ -49,7 +49,7 @@ function App() {
               <Route path="/login" element={<Login loginUser={loginUser} />} />
               <Route path="/signup" element={<SignUp signUpUser={signUpUser} />} /> {/* Route for the sign-up page */}
               <Route path="/profile" element={<MyProfile username={username} />} />
-              <Route path="/dietplan" element={<DietPlan />} />
+              <Route path="/DietPlan" element={<DietPlan />} />
 
             </Routes>
           </div>
